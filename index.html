@@ -16,15 +16,33 @@
             color: rgb(235, 225, 213);
             font-family: Arial, sans-serif;
             text-align: center;
+            flex-direction: column;
         }
 
         h1 {
             font-size: 2rem;
-            margin: 0;
+            margin: 0 0 20px 0;
+        }
+
+        #sketch-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        canvas {
+            margin: 0 auto; /* Center the canvas horizontally */
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
 </head>
 <body>
     <h1>NFT Uruguay — Under Construction</h1>
+    <div id="sketch-container">
+        <main></main>
+    </div>
+    <script src="conway/sketch.js"></script>
 </body>
 </html>
