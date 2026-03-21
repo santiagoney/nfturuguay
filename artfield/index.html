@@ -3106,7 +3106,7 @@ document.getElementById('btn-svg-export').addEventListener('click',()=>{const sv
 // KEYBOARD
 // ═══════════════════════════════════════════════════════════════════
 document.addEventListener('keydown',e=>{
-  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA')return;
   const sl=id=>document.getElementById(id);
   const upd=(id,valId,key,delta,min,max)=>{const nv=Math.max(min,Math.min(max,state[key]+delta));state[key]=nv;sl(id).value=nv;sl(valId).textContent=nv;};
   if(e.ctrlKey||e.metaKey){switch(e.key){
@@ -3139,7 +3139,7 @@ document.addEventListener('keydown',e=>{
 });
 
 document.addEventListener('keyup',e=>{
-  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA')return;
   switch(e.key){case'g':case'G':growKeyHeld=false;break;case'd':case'D':shrinkKeyHeld=false;break;}
 });
 
@@ -3150,7 +3150,7 @@ cvs.addEventListener('pointerleave',()=>{
 });
 
 document.addEventListener('keydown',e=>{
-  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA')return;
   const selActive=toolMode==='select'||toolMode==='lasso'||toolMode==='ellipse';
   if(e.key===' '&&!e.repeat){
     e.preventDefault();
@@ -4060,7 +4060,7 @@ document.getElementById('sl-anim-fps').addEventListener('input', function() {
 
 // ── Keyboard shortcuts ────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
   if (e.key === ',') { if (!animPlaying) loadFrame(Math.max(0, currentFrameIdx - 1)); }
   if (e.key === '.') { if (!animPlaying) loadFrame(Math.min(frames.length - 1, currentFrameIdx + 1)); }
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); togglePlayback(); }
@@ -4524,7 +4524,7 @@ document.getElementById('modal-shortcuts').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) e.currentTarget.style.display = 'none';
 });
 document.addEventListener('keydown', (e) => {
-  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
   if (e.key === '?') {
     e.preventDefault();
     const m = document.getElementById('modal-shortcuts');
